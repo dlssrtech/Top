@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOP | Interior Design, Printing & IT Services | Dwarka More, Delhi</title>
+  <meta name="description" content="TOP offers complete Interior Design, Printing and IT Services in Dwarka More, Delhi - 110059. Call +91-7519082385 for a free consultation." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-2: #1f2a48;
+      --surface: rgba(15, 23, 42, 0.8);
+      --surface-2: rgba(30, 41, 59, 0.72);
+      --text: #e2e8f0;
+      --muted: #cbd5e1;
+      --accent: #f97316;
+      --accent-2: #06b6d4;
+      --success: #22c55e;
+      --border: rgba(148, 163, 184, 0.25);
+      --white: #ffffff;
+      --shadow: 0 12px 30px rgba(2, 6, 23, 0.35);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top left, #20356c 0%, var(--bg) 45%), linear-gradient(140deg, var(--bg), #0f172a 40%, var(--bg-2));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin: 0 0 0.9rem;
+      color: var(--white);
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 72ch;
+      margin: 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(2, 6, 23, 0.65);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      color: var(--white);
+      font-size: 1.35rem;
+      letter-spacing: 0.8px;
+      text-decoration: none;
+    }
+
+    .brand-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, var(--accent), #ea580c);
+      box-shadow: var(--shadow);
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .cta-chip {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.52rem 0.9rem;
+      border-radius: 999px;
+      color: var(--white) !important;
+      transition: 0.2s ease;
+    }
+
+    .cta-chip:hover {
+      border-color: var(--accent);
+      background: rgba(249, 115, 22, 0.14);
+    }
+
+    .hero {
+      padding: 4.8rem 0 3.3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      border: 1px solid rgba(6, 182, 212, 0.45);
+      color: #a5f3fc;
+      background: rgba(6, 182, 212, 0.18);
+      border-radius: 999px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.4px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.4rem);
+      line-height: 1.15;
+      color: var(--white);
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 65ch;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.45rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.82rem 1.2rem;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: var(--white);
+      background: linear-gradient(145deg, var(--accent), #ea580c);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn-tertiary {
+      color: var(--white);
+      background: linear-gradient(145deg, #16a34a, #15803d);
+      box-shadow: var(--shadow);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem;
+    }
+
+    .hero-highlights h2 {
+      margin: 0 0 0.7rem;
+      color: var(--white);
+      font-size: 1.25rem;
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    .checklist li {
+      display: flex;
+      gap: 0.55rem;
+      align-items: flex-start;
+      margin-bottom: 0.65rem;
+    }
+
+    .check {
+      color: var(--success);
+      font-weight: bold;
+      margin-top: 1px;
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1.2fr 1fr;
+      margin-top: 1.25rem;
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 1.2rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.8rem;
+      color: var(--white);
+      font-size: 1.18rem;
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+
+    .bullet-list li + li { margin-top: 0.45rem; }
+
+    .section-cta {
+      margin-top: 1.25rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .filters {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      margin: 1.1rem 0 1rem;
+    }
+
+    .filter-pill {
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .portfolio-grid,
+    .blog-grid,
+    .feature-grid,
+    .admin-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .project-thumb {
+      height: 130px;
+      border-radius: 12px;
+      background: linear-gradient(140deg, rgba(6, 182, 212, 0.45), rgba(249, 115, 22, 0.4));
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .map-box {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      min-height: 200px;
+    }
+
+    .map-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      min-height: 220px;
+    }
+
+    form {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.65);
+      color: var(--white);
+      border-radius: 9px;
+      padding: 0.72rem 0.78rem;
+      font: inherit;
+    }
+
+    textarea { min-height: 110px; resize: vertical; }
+
+    .floating-wrap {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      display: grid;
+      gap: 0.55rem;
+      z-index: 60;
+    }
+
+    .float-btn {
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.68rem 0.92rem;
+      box-shadow: var(--shadow);
+    }
+
+    .float-call { background: linear-gradient(145deg, var(--accent), #ea580c); }
+    .float-wa { background: linear-gradient(145deg, #22c55e, #15803d); }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+      margin-top: 3.5rem;
+      padding: 1.4rem 0 2rem;
+      color: #a8b3c6;
+      text-align: center;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .services-grid,
+      .portfolio-grid,
+      .blog-grid,
+      .feature-grid,
+      .admin-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding-top: 3.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="brand-badge">TOP</span>
+        <span>TOP Services</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a class="cta-chip" href="tel:+917519082385">📞 +91-7519082385</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="tag">Interior Design • Printing • IT Services</span>
+          <h1>Complete Interior, Printing &amp; IT Solutions Under One Roof</h1>
+          <p>
+            We help businesses and homes with professional Interior Design, High-Quality Printing,
+            and Modern IT Services. Build your brand, transform your space, and grow with digital solutions.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Get Free Consultation</a>
+            <a class="btn btn-secondary" href="#services">View Our Services</a>
+            <a class="btn btn-tertiary" href="tel:+917519082385">📞 Call Now: +91-7519082385</a>
+          </div>
+        </div>
+
+        <aside class="card hero-highlights">
+          <h2>Why Businesses Choose TOP</h2>
+          <ul class="checklist">
+            <li><span class="check">✔</span><span>Experienced professionals across design, print, and technology.</span></li>
+            <li><span class="check">✔</span><span>Affordable pricing with transparent consultation.</span></li>
+            <li><span class="check">✔</span><span>Fast delivery for urgent business requirements.</span></li>
+            <li><span class="check">✔</span><span>Complete business solution from idea to execution.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About TOP</h2>
+        <p class="section-subtitle">
+          TOP is a professional service provider based in Dwarka More, Delhi, offering Interior Design,
+          Printing, and IT Services. Our mission is to deliver creative designs, powerful technology solutions,
+          and high-quality print materials to help businesses grow.
+        </p>
+        <div class="about-grid">
+          <article class="card">
+            <h3>Our Vision</h3>
+            <p style="margin:0;color:var(--muted);">Deliver premium work that combines creativity, functionality, and business impact for startups, SMEs, and households.</p>
+          </article>
+          <article class="card">
+            <h3>Why Choose Us</h3>
+            <ul class="checklist">
+              <li><span class="check">✔</span><span>Experienced professionals</span></li>
+              <li><span class="check">✔</span><span>Affordable pricing</span></li>
+              <li><span class="check">✔</span><span>Fast project delivery</span></li>
+              <li><span class="check">✔</span><span>Complete business solutions</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Everything you need to build beautiful spaces, strong branding, and digital business growth.</p>
+
+        <div class="services-grid">
+          <article class="card">
+            <h3>1) Interior Design Services</h3>
+            <ul class="bullet-list">
+              <li>Home Interior Design</li>
+              <li>Office Interior Design</li>
+              <li>Modular Kitchen Design</li>
+              <li>Furniture &amp; Space Planning</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>2) Printing Services</h3>
+            <ul class="bullet-list">
+              <li>Flex &amp; Banner Printing</li>
+              <li>Visiting Cards</li>
+              <li>Brochures &amp; Flyers</li>
+              <li>Poster Printing</li>
+              <li>Large Format Printing</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>3) IT Services</h3>
+            <ul class="bullet-list">
+              <li>Website Development</li>
+              <li>E-commerce Development</li>
+              <li>Mobile App Development</li>
+              <li>Software Development</li>
+              <li>Digital Marketing (SEO, Social Media)</li>
+              <li>Website Maintenance</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="section-cta">
+          <a class="btn btn-primary" href="#contact">Start Your Project Today</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <h2 class="section-title">Portfolio / Projects</h2>
+        <p class="section-subtitle">Showcase of recent Interior, Printing, and IT works.</p>
+        <div class="filters" aria-label="Portfolio categories">
+          <span class="filter-pill">Interior</span>
+          <span class="filter-pill">Printing</span>
+          <span class="filter-pill">IT Projects</span>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="card"><div class="project-thumb"></div><h3>Interior Projects</h3><p style="margin:0;color:var(--muted);">Modern home and office transformations focused on utility and style.</p></article>
+          <article class="card"><div class="project-thumb"></div><h3>Printing Work</h3><p style="margin:0;color:var(--muted);">Brand print collateral from cards and flyers to large banners.</p></article>
+          <article class="card"><div class="project-thumb"></div><h3>Website &amp; IT Projects</h3><p style="margin:0;color:var(--muted);">Business websites, custom software, and digital growth campaigns.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="blog">
+      <div class="container">
+        <h2 class="section-title">Blog Section</h2>
+        <p class="section-subtitle">Helpful industry insights and business growth tips.</p>
+
+        <div class="blog-grid" style="margin-top:1.2rem;">
+          <article class="card"><h3>Latest Interior Design Trends</h3><p style="margin:0;color:var(--muted);">Explore practical and stylish design trends for homes and offices.</p></article>
+          <article class="card"><h3>Importance of Professional Printing</h3><p style="margin:0;color:var(--muted);">How print quality directly impacts your business credibility.</p></article>
+          <article class="card"><h3>Benefits of a Business Website</h3><p style="margin:0;color:var(--muted);">Why every business needs a modern, conversion-ready website.</p></article>
+        </div>
+
+        <article class="card" style="margin-top:1rem;">
+          <h3>Blog Admin Controls (Planned)</h3>
+          <p style="margin:0;color:var(--muted);">✔ Add blog &nbsp; ✔ Edit blog &nbsp; ✔ Delete blog &nbsp; ✔ Upload images</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Get in touch for Interior, Printing, or IT services.</p>
+
+        <div class="contact-grid">
+          <article class="card">
+            <h3>Office Address</h3>
+            <p style="margin:0;color:var(--muted);">Dwarka More<br />Delhi – 110059</p>
+            <p style="margin:0.7rem 0 0;color:var(--muted);">📞 Phone: <a href="tel:+917519082385" style="color:#fde68a;text-decoration:none;">+91-7519082385</a></p>
+
+            <div class="map-box" style="margin-top:1rem;">
+              <iframe
+                title="Dwarka More Delhi Map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Dwarka+More+Delhi+110059&output=embed">
+              </iframe>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Request Free Quote</h3>
+            <form>
+              <input type="text" name="name" placeholder="Name" required />
+              <input type="tel" name="phone" placeholder="Phone" required />
+              <input type="email" name="email" placeholder="Email" required />
+              <select name="service" required>
+                <option value="">Service Required</option>
+                <option>Interior Design</option>
+                <option>Printing</option>
+                <option>IT Services</option>
+              </select>
+              <textarea name="message" placeholder="Message"></textarea>
+              <button type="submit" class="btn btn-primary">Request Free Quote</button>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lead-tools" style="padding-top:0;">
+      <div class="container">
+        <h2 class="section-title">Lead Generation Features</h2>
+        <div class="feature-grid" style="margin-top:1rem;">
+          <article class="card"><h3>WhatsApp Chat Button</h3><p style="margin:0;color:var(--muted);">Direct WhatsApp inquiries for faster customer communication.</p></article>
+          <article class="card"><h3>Call Now Floating Button</h3><p style="margin:0;color:var(--muted);">One-tap calls from any section of the page.</p></article>
+          <article class="card"><h3>Instant Quote Form</h3><p style="margin:0;color:var(--muted);">Quick quote capture form to improve lead conversions.</p></article>
+          <article class="card"><h3>Google Maps</h3><p style="margin:0;color:var(--muted);">Location visibility for easier office visits.</p></article>
+          <article class="card"><h3>Customer Testimonials</h3><p style="margin:0;color:var(--muted);">Social proof section to improve trust and conversions.</p></article>
+          <article class="card"><h3>Conversion-Ready Layout</h3><p style="margin:0;color:var(--muted);">Strategic CTA placement from hero to footer.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="admin-panel" style="padding-top:0;">
+      <div class="container">
+        <h2 class="section-title">Admin Panel Features (Planned)</h2>
+        <p class="section-subtitle">Structured modules for scalable website management.</p>
+        <div class="admin-grid" style="margin-top:1.1rem;">
+          <article class="card"><h3>Dashboard</h3><p style="margin:0;color:var(--muted);">Overview of leads, services, blogs, and portfolio.</p></article>
+          <article class="card"><h3>Services Management</h3><p style="margin:0;color:var(--muted);">Add, edit, delete services and update service media/content.</p></article>
+          <article class="card"><h3>Blog Management</h3><p style="margin:0;color:var(--muted);">Add, edit, delete blog posts and manage blog images.</p></article>
+          <article class="card"><h3>Portfolio Management</h3><p style="margin:0;color:var(--muted);">Upload projects, assign categories, and maintain project data.</p></article>
+          <article class="card"><h3>Leads Management</h3><p style="margin:0;color:var(--muted);">View contact form submissions and customer inquiries.</p></article>
+          <article class="card"><h3>Website Settings</h3><p style="margin:0;color:var(--muted);">Edit contact number, address, homepage content, and services.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pages" style="padding-top:0;">
+      <div class="container">
+        <article class="card">
+          <h3>Suggested Website Pages</h3>
+          <p style="margin:0;color:var(--muted);">Home • About Us • Services • Portfolio • Blog • Contact</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-wrap" aria-label="Quick actions">
+    <a class="float-btn float-wa" href="https://wa.me/917519082385" target="_blank" rel="noopener">WhatsApp Chat</a>
+    <a class="float-btn float-call" href="tel:+917519082385">Call Now</a>
+  </div>
+
+  <footer>
+    © <span id="year"></span> TOP | Interior Design • Printing • IT Services | Dwarka More, Delhi – 110059
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
