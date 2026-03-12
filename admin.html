@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOP Admin Panel</title>
+  <style>
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:#edf2ff;background:linear-gradient(145deg,#050816,#0f1830)}
+    .wrap{max-width:980px;margin:20px auto;padding:16px}
+    .container{width:min(1080px,92%);margin:0 auto}
+    header{position:sticky;top:0;background:rgba(3,8,20,.45);border-bottom:1px solid rgba(148,170,220,.16);backdrop-filter:blur(12px)}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{color:#fff;text-decoration:none;font-weight:800}
+    .nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+    .nav-links a{color:#bdd0f8;text-decoration:none;font-weight:600}
+    .card{background:rgba(14,24,45,.58);border:1px solid rgba(148,170,220,.28);border-radius:16px;padding:16px}
+    h1,h3{margin:.2rem 0 .8rem}
+    .group{margin-top:14px;padding-top:14px;border-top:1px solid rgba(148,170,220,.28)}
+    input,textarea{width:100%;margin:.4rem 0;background:rgba(4,10,24,.55);color:#fff;border:1px solid rgba(146,169,214,.35);border-radius:10px;padding:.7rem .8rem;font:inherit}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .btn{display:inline-block;padding:.7rem 1rem;border-radius:10px;border:1px solid transparent;font-weight:700;cursor:pointer}
+    .primary{background:linear-gradient(135deg,#ff7b29,#ff5a22);color:#fff}.secondary{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">TOP Services</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#home">Home</a><a href="index.html#services">Services</a><a href="index.html#portfolio">Portfolio</a><a href="index.html#contact">Contact</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="admin.html">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <h1>TOP Admin Panel</h1>
+      <p>Admin URL: <code>/admin.html</code> | Homepage: <a href="index.html" style="color:#a9eeff">/index.html</a></p>
+
+      <div class="group"><h3>Hero & About</h3>
+        <input id="heroTag" placeholder="Hero Tag" />
+        <input id="heroTitle" placeholder="Hero Title" />
+        <textarea id="heroDescription" placeholder="Hero Description"></textarea>
+        <textarea id="aboutText" placeholder="About text"></textarea>
+        <textarea id="visionText" placeholder="Vision text"></textarea>
+        <textarea id="aboutPoints" placeholder="About points (one per line)"></textarea>
+      </div>
+
+      <div class="group"><h3>Contact</h3>
+        <div class="row"><input id="phone" placeholder="Phone" /><input id="address" placeholder="Address" /></div>
+      </div>
+
+      <div class="group"><h3>Services</h3>
+        <textarea id="services" placeholder="Format: title|image-url|point1,point2,point3 (one per line)"></textarea>
+      </div>
+
+      <div class="group"><h3>Portfolio</h3>
+        <textarea id="portfolio" placeholder="Format: title|description|image-url (one per line)"></textarea>
+      </div>
+
+      <div class="group"><h3>Reviews</h3>
+        <textarea id="reviews" placeholder="Format: name|rating(1-5)|comment (one per line)"></textarea>
+      </div>
+
+      <div class="group">
+        <button class="btn primary" id="save">Save Changes</button>
+        <button class="btn secondary" id="reset">Reset Default</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const defaultContent = {
+      heroTag: "Interior Design • Printing • IT Solutions",
+      heroTitle: "Attractive Spaces, Powerful Branding & Smart Digital Growth",
+      heroDescription: "TOP Services provides complete design-to-delivery support. We visit your home and office, understand your needs, and execute quality interior, print, and IT solutions.",
+      aboutText: "TOP Services is a trusted partner for home interiors, business branding prints, and end-to-end IT development services in Dwarka More, Delhi.",
+      visionText: "Our vision is to deliver premium quality, practical creativity, and strong customer support for every project.",
+      aboutPoints: ["Onsite consultation at your location", "Transparent pricing and timelines", "Experienced designers & developers", "Fast support and post-delivery assistance"],
+      phone: "+91-7519082385",
+      address: "Dwarka More, Delhi - 110059",
+      services: [
+        { title: "Interior Design", image: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1200&auto=format&fit=crop", points: ["Home & office planning", "Modular kitchen solutions", "3D layout & space optimization"] },
+        { title: "Printing Solutions", image: "https://images.unsplash.com/photo-1571867424488-4565932edb41?q=80&w=1200&auto=format&fit=crop", points: ["Branding banners & flex", "Cards, brochures & flyers", "Large format marketing prints"] },
+        { title: "IT Services", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop", points: ["Website and e-commerce", "App & software development", "SEO and digital marketing"] }
+      ],
+      portfolio: [
+        { title: "Luxury Living Room Makeover", description: "Modern layout, custom furniture styling, and warm ambient finish.", image: "https://images.unsplash.com/photo-1616594039964-3fdbd8d71e5f?q=80&w=1200&auto=format&fit=crop" },
+        { title: "Retail Branding Print Campaign", description: "Complete store branding with high-resolution banners and standees.", image: "https://images.unsplash.com/photo-1586880244406-556ebe35f282?q=80&w=1200&auto=format&fit=crop" },
+        { title: "Business Website + Lead Funnel", description: "Conversion-focused website with inquiry automation and SEO setup.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" }
+      ],
+      reviews: [
+        { name: "Neha Sharma", rating: 5, comment: "Excellent interior and print quality. Team visited our home and completed work on time." },
+        { name: "Rahul Enterprises", rating: 5, comment: "Our website and digital ads delivered strong leads in just weeks." },
+        { name: "Amit Verma", rating: 4, comment: "Great communication and budget-friendly service with good finishing." }
+      ]
+    };
+
+    const key = "top_services_content_v2";
+    let content = JSON.parse(localStorage.getItem(key) || "null") || structuredClone(defaultContent);
+    const rows = (v) => v.split("\n").map(x => x.trim()).filter(Boolean);
+
+    function setForm(){
+      heroTag.value = content.heroTag; heroTitle.value = content.heroTitle; heroDescription.value = content.heroDescription;
+      aboutText.value = content.aboutText; visionText.value = content.visionText; aboutPoints.value = content.aboutPoints.join("\n");
+      phone.value = content.phone; address.value = content.address;
+      services.value = content.services.map(s => `${s.title}|${s.image}|${s.points.join(",")}`).join("\n");
+      portfolio.value = content.portfolio.map(p => `${p.title}|${p.description}|${p.image}`).join("\n");
+      reviews.value = content.reviews.map(r => `${r.name}|${r.rating}|${r.comment}`).join("\n");
+    }
+
+    function parseServices(v){return rows(v).map(r=>{const [title,image,points]=r.split("|"); if(!title||!image||!points)return null; return {title:title.trim(), image:image.trim(), points:points.split(",").map(p=>p.trim()).filter(Boolean)};}).filter(Boolean)}
+    function parsePortfolio(v){return rows(v).map(r=>{const [title,description,image]=r.split("|"); if(!title||!description||!image)return null; return {title:title.trim(), description:description.trim(), image:image.trim()};}).filter(Boolean)}
+    function parseReviews(v){return rows(v).map(r=>{const [name,rating,comment]=r.split("|"); if(!name||!rating||!comment)return null; return {name:name.trim(), rating:Number(rating)||5, comment:comment.trim()};}).filter(Boolean)}
+
+    save.onclick = () => {
+      const next = {
+        heroTag: heroTag.value.trim() || defaultContent.heroTag,
+        heroTitle: heroTitle.value.trim() || defaultContent.heroTitle,
+        heroDescription: heroDescription.value.trim() || defaultContent.heroDescription,
+        aboutText: aboutText.value.trim() || defaultContent.aboutText,
+        visionText: visionText.value.trim() || defaultContent.visionText,
+        aboutPoints: rows(aboutPoints.value),
+        phone: phone.value.trim() || defaultContent.phone,
+        address: address.value.trim() || defaultContent.address,
+        services: parseServices(services.value),
+        portfolio: parsePortfolio(portfolio.value),
+        reviews: parseReviews(reviews.value)
+      };
+      if(!next.aboutPoints.length) next.aboutPoints = defaultContent.aboutPoints;
+      if(!next.services.length) next.services = defaultContent.services;
+      if(!next.portfolio.length) next.portfolio = defaultContent.portfolio;
+      if(!next.reviews.length) next.reviews = defaultContent.reviews;
+      content = next;
+      localStorage.setItem(key, JSON.stringify(content));
+      alert('Saved. Open index.html to see updates.');
+    };
+
+    reset.onclick = () => { content = structuredClone(defaultContent); localStorage.removeItem(key); setForm(); };
+    setForm();
+  </script>
+</body>
+</html>
